@@ -25,3 +25,9 @@ def calculaEdad(request,edad,year):
     documento = "<html><body><h2>En el año %s tendrás %s años</h2></body></html>" %(year,edadFutura)
 
     return HttpResponse(documento)
+
+def laloLegal (request, edad):
+    if (edad>=18):
+        return HttpResponse("Lalo legal")
+    else:
+        return HttpResponse("Lalo ilegal")
