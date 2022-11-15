@@ -1,11 +1,18 @@
 from django.http import HttpResponse
 import datetime
+from django.template import Template, Context
+
 
 def saludo(request):
-    return HttpResponse("Hola perrillos")
+    doc_externo = open(r"C:\Users\aldo_\Documents\lalo\djangoProject\plantillas\saludo.html")
+    plt = Template(doc_externo.read())
+    doc_externo.close()
+    ctx = Context()
+    documento = plt.render(ctx)
+    return HttpResponse(documento)
 
 def despedida(request):
-    return  HttpResponse("Adios lalito perro")
+   return HttpResponse("Adios amigos del youtube")
 
 def fecha(request):
     fecha_actual = datetime.datetime.now()
