@@ -9,6 +9,7 @@ class Persona(object):
 
 def saludo(request):
     p1 = Persona("Profesor Juan","Barrón")
+    temas = ["Plantillas", "Modelos","Vitas","despliegue"]
     #nombre = "Juan"
     #apellido = "Arreola"
     fecha = datetime.datetime.now()
@@ -16,7 +17,7 @@ def saludo(request):
     doc_externo = open(r"C:\Users\aldo_\Documents\lalo\djangoProject\plantillas\saludo.html")
     plt = Template(doc_externo.read())
     doc_externo.close()
-    ctx = Context({"nombre_persona":p1.nombre, "apellido_persona":p1.apellido, "fecha":fecha})
+    ctx = Context({"nombre_persona":p1.nombre, "apellido_persona":p1.apellido, "fecha":fecha, "temas":temas})
     documento = plt.render(ctx)
     return HttpResponse(documento)
 
