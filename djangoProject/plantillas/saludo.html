@@ -4,10 +4,26 @@
          Que onda perros, aqui andamos con las plantillas
          </h2>
          <p>
-             El nombre del profesor es: {{ nombre_persona}} {{ apellido_persona }}
+             El nombre del profesor es: {{ nombre_persona.upper}} {{ apellido_persona.upper }}
          </p>
          <p>
-             Y la fecha del d&iacute;a de hoy: {{ fecha.day}} de {{ fecha.month }} del {{ fecha.year }}
+             Y la fecha del d&iacute;a de hoy: {{ fecha.day}} / {{ fecha.month }} / {{ fecha.year }}
+         </p>
+         <p>
+             <strong>
+             Temas del curso:
+         </strong>
+         </p>
+         <p>
+            <ul>
+         {% if temas %}
+             {% for i in temas %}
+                 <li>{{ i }}</li>
+             {% endfor %}
+         {% else %}
+             <p>No hay temas en existencia</p>
+         {% endif %}
+         </ul>
          </p>
          </body>
          </html>
