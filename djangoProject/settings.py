@@ -54,7 +54,7 @@ ROOT_URLCONF = 'djangoProject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR / 'templates']
+        'DIRS': [r'C:\Users\aldo_\Documents\lalo\djangoProject\plantillas']
         ,
         'APP_DIRS': True,
         'OPTIONS': {
