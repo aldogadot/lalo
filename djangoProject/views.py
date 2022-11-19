@@ -9,6 +9,12 @@ class Persona(object):
         self.nombre = nombre
         self.apellido = apellido
 
+def cursoCss(request):
+    fecha = datetime.datetime.now()
+    return render(request,"cursoCss.html",{"fecha":fecha})
+def cursoC(request):
+    fecha = datetime.datetime.now()
+    return render(request,"CursoC.html",{"fecha":fecha})
 def saludo(request):
     p1 = Persona(" Profesor Juan","Barrón")
     temas = ["Plantillas", "Modelos","Vitas","despliegue"]
