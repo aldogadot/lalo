@@ -1,10 +1,21 @@
 <html>
          <body>
+         {% include "superior/barra.html" %}
          <h2 style="color: cyan">
          Que onda perros, aqui andamos con las plantillas
          </h2>
+
+         {% if nombre_persona == ' Profesor Juan' %}
+         <p>El curso lo imparte el profesor titular</p>
+             {% else %}
+             <p>El curso lo imparte el profesor suplente</p>
+         {% endif %}
+         {# No temas disenador, ignora esta parte #}
+         {%  comment %} No temas amigo
+         ignora esta parte
+         {%  endcomment %}
          <p>
-             El nombre del profesor es: {{ nombre_persona.upper}} {{ apellido_persona.upper }}
+             El nombre del profesor es: {{ nombre_persona|upper}} {{ apellido_persona.upper }}
          </p>
          <p>
              Y la fecha del d&iacute;a de hoy: {{ fecha.day}} / {{ fecha.month }} / {{ fecha.year }}
@@ -18,7 +29,7 @@
             <ul>
          {% if temas %}
              {% for i in temas %}
-                 <li>{{ i }}</li>
+                 <li>{{ i|first|lower }}</li>
              {% endfor %}
          {% else %}
              <p>No hay temas en existencia</p>
